@@ -21,23 +21,23 @@ const About = () => {
             <article className="about__card">
               <FaAward className="about__icon"/>
               <h5>Experience</h5>
-              <small>3+ Years Working</small>
+              <small>6+ Years Working</small>
             </article>
             <article className="about__card">
               <FiUser className="about__icon"/>
               <h5>Clients</h5>
-              <small>200+ Worldwide</small>
+              <small>15+ Worldwide</small>
             </article>
             <article className="about__card">
               <VscFolder className="about__icon"/>
               <h5>Projects</h5>
-              <small>80+ Completed</small>
+              <small>25+ Completed</small>
             </article>
           </div>
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          I am a full stack developer with 6 years of work experience which covering front end, back end, mobile apps, database, and devops. Had a lot of experience developing various websites and applications that are used internally and externally. I also have skills in electro-mechanics such as robotics and IoT. I am able to work well as a team and have the ability to learn things quickly.
           </p>
-          <a href="contect" className='btn btn-primary'>Let's Talk</a>
+          {/* <a href="#contact" className='btn btn-primary'>Let's Talk</a> */}
         </div>
       </div>
     </section>
