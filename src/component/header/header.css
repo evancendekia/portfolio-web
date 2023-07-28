@@ -74,4 +74,7 @@ header {
     .scroll__down{
         display: none;
     }
+    .name{
+        font-size: 1.75em;
+    }
 }
