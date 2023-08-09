@@ -27,6 +27,10 @@ header {
     bottom: 3rem;
 }
 
+.header__socials a{
+    color: var(--color-primary)
+}
+
 .header__socials::after {
     content: '';
     width: 1px;
@@ -54,6 +58,7 @@ header {
     transform: rotate(90deg);
     font-weight:  200;
     font-size: 0.9rem;
+    color: var(--color-primary)
 }
 
 

@@ -6,6 +6,8 @@ import IMG3 from '../../assets/mockups/AITI-LOG.png'
 import IMG4 from '../../assets/mockups/TPS Online.png'
 import IMG5 from '../../assets/mockups/SIATEK.png'
 import IMG6 from '../../assets/mockups/AITI KURIR.png'
+import IMG7 from '../../assets/mockups/Wedding Invitation.png'
+import IMG8 from '../../assets/mockups/AME-R.png'
 
 const Portfolio = () => {
 
@@ -46,7 +48,20 @@ const Portfolio = () => {
       title: 'Delivery handling system',
       // github: 'https://github.com',
       // demo: 'https:dribbble.com'
+    },{
+      id: 7,
+      image: IMG7,
+      title: 'Wedding Invitation',
+      // github: 'https://github.com',
+      // demo: 'https:dribbble.com'
+    },{
+      id: 8,
+      image: IMG8,
+      title: 'Aviation Monitoring Equipment & Report',
+      // github: 'https://github.com',
+      // demo: 'https:dribbble.com'
     }
+    
   ]
 
   return (
