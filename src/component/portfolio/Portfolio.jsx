@@ -10,6 +10,8 @@ import IMG7 from '../../assets/mockups/Wedding Invitation.png'
 import IMG8 from '../../assets/mockups/AME-R.png'
 
 import 'animate.css';
+import {MdClose} from 'react-icons/md'
+import {GrFormClose} from 'react-icons/gr'
 
 
 const Portfolio = () => {
@@ -21,7 +23,6 @@ const Portfolio = () => {
   const [showMainListIn, setShowMainListIn] = useState(false) 
   const [showMainListOut, setShowMainListOut] = useState(false) 
   const showDetailHandle = (data) => {
-    console.log('data',data)
     setDataDetail(data)
     if(showDetail === false){ //open
       setShowMainListOut(true)
@@ -32,19 +33,21 @@ const Portfolio = () => {
         setShowDetail(true)
       }, 500);
     }else if (showDetail === true && dataDetail.id === data.id){ //close
-      setShowDetailOut(true)
-      setTimeout(() => {
-        setShowDetail(false)
-        setShowDetailOut(false)
-        setShowMainList(true)
-        // setShowMainListIn(true)
-        setTimeout(() => {
-          setShowMainListOut(false)
-          setDataDetail({})
-        }, 500);
-      }, 500);
+      closeShowDetail()
     }
 
+  }
+  const closeShowDetail = () => {
+    setShowDetailOut(true)
+    setTimeout(() => {
+      setShowDetail(false)
+      setShowDetailOut(false)
+      setShowMainList(true)
+      setTimeout(() => {
+        setShowMainListOut(false)
+        setDataDetail({})
+      }, 500);
+    }, 500);
   }
   const data = [
     {
@@ -56,31 +59,31 @@ const Portfolio = () => {
     },{
       id: 2,
       image: IMG2,
-      title: 'Quiz test application',
+      title: 'Quiz Test Application',
       // github: 'https://github.com',
       // demo: 'https:dribbble.com'
     },{
       id: 3,
       image: IMG3,
-      title: 'Logistic handling system',
+      title: 'Logistic Handling System',
       // github: 'https://github.com',
       // demo: 'https:dribbble.com'
     },{
       id: 4,
       image: IMG4,
-      title: 'Manifes data reporting system',
+      title: 'Manifes Data Reporting System',
       // github: 'https://github.com',
       // demo: 'https:dribbble.com'
     },{
       id: 5,
       image: IMG5,
-      title: 'Academic system information',
+      title: 'Academic System Information',
       // github: 'https://github.com',
       // demo: 'https:dribbble.com'
     },{
       id: 6,
       image: IMG6,
-      title: 'Delivery handling system',
+      title: 'Delivery Handling System',
       // github: 'https://github.com',
       // demo: 'https:dribbble.com'
     },{
@@ -106,14 +109,20 @@ const Portfolio = () => {
       <div className={`${showDetail ? '' : 'hidden'} ${showDetail ? 'animate__animated animate__fadeInTopLeft' : ''} ${showDetailOut ? 'animate__animated animate__fadeOutTopLeft' : ''}`}>
         <div className={`container portfolio__detail__container `} >
           <article className='portfolio__item__wide '>
-            <h2>{dataDetail.title}</h2>
+            <div className="detail__title">
+              <h2 className='title' >{dataDetail.title}</h2>
+              <a onClick={()=> closeShowDetail()}className="close__button-img"><MdClose/></a>
+            </div>
             <hr/>
             <div className="portfolio__item-image">
               <img src={dataDetail.image} alt='Company Profile'/>
             </div>
           </article>
           <article className='portfolio__item__wide'>
-            <h2>Project Detail</h2>
+            <div className="detail__title">
+              <h2 className='title' >Project Detail</h2>
+              <a onClick={()=> closeShowDetail()}className="close__button-detail"><MdClose/></a>
+            </div>
             <hr/>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempus, massa eu ullamcorper pretium, dolor ante dignissim libero, eget lobortis erat sem vel odio. Nullam nibh mi, mollis in bibendum in, malesuada vulputate lacus. Aenean ut lobortis elit. Nam non augue neque. Nunc nec sodales ante, sit amet vehicula nulla. Maecenas vulputate, enim non rhoncus fringilla, neque mauris bibendum ex, vel vulputate sapien diam ut lacus. Donec neque est, condimentum laoreet ornare quis, molestie rhoncus tortor. </p>
             <br/>

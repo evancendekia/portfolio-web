@@ -20,7 +20,7 @@
 }
 
 .portfolio__detail__container p{
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .portfolio__item__wide {
@@ -53,6 +53,9 @@
 .portfolio__small__item.active {
     background: var(--color-white);
 }
+.portfolio__small__item:hover {
+    background: var(--color-white);
+}
 
 .portfolio__item:hover{
     border-color: var(--color-primary-variant);
@@ -74,7 +77,43 @@
     gap: 1rem;
     margin-bottom: 1rem;
 }
+.detail__title{
+    width: max-content;
+    display: inline-block;
+    width: 100%;
+    border-radius: 3rem;
+}
+.detail__title > .close__button-detail, .close__button-img {
+    float: right;
+}
+.title{
+    float:left;
+}
+.title-img{
+    display:none;
+}
+.close__button-img, .close__button-detail {
+    background: rgba(0,0,0,0.2);
+    padding: 0.7rem;
+    border-radius: 50%;
+    display: flex;
+    color: var(--color-light);
+    font-size: 1.1rem;
+}
+.close__button, .close__button-detail :hover{
+    background: rgba(0,0,0,0.2);
+}
 
+.close__button-img{
+    display: none;
+}
+.close__button-detail{
+    display: show;
+}
+
+.detail__title h2{
+    font-size: 1.5  rem;
+}
 
 /* ============== MEDIA MEDIUM DEVICES ============== */
 @media screen and (max-width: 1024px){
@@ -82,7 +121,6 @@
         grid-template-columns: 1fr 1fr;
         gap: 1.2rem;
     }
-    
     .portfolio__detail__container {
         grid-template-columns: 1fr;
         gap: 1.2rem;
@@ -90,6 +128,18 @@
     }
     .portfolio__detail__container p{
         font-size: 14px;
+    }
+    .portfolio__small__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+    .close__button-img{
+        display: flex;
+        display: show !important;
+    }
+    .close__button-detail{
+        display: none;
     }
 }
 
@@ -107,5 +157,19 @@
     }
     .portfolio__detail__container p{
         font-size: 12px;
+    }
+    .close__button-img{
+        display: flex;
+        display: show !important;
+    }
+    .close__button-detail{
+        display: none;
+    }
+    .portfolio__small__container {
+        display: none;
+    }
+    .close__button-img, .close__button-detail {
+        padding: 0.5rem;
+        font-size: 1rem;
     }
 }
