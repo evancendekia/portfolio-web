@@ -1,21 +1,13 @@
 import React, {useState} from 'react'
 import './portfolio.css'
-import IMG1 from '../../assets/mockups/Arunika Terang Indonesia.png'
-import IMG2 from '../../assets/mockups/Ayo Tryout.png'
-import IMG3 from '../../assets/mockups/AITI-LOG.png'
-import IMG4 from '../../assets/mockups/TPS Online.png'
-import IMG5 from '../../assets/mockups/SIATEK.png'
-import IMG6 from '../../assets/mockups/AITI KURIR.png'
-import IMG7 from '../../assets/mockups/Wedding Invitation.png'
-import IMG8 from '../../assets/mockups/AME-R.png'
 
 import 'animate.css';
 import {MdClose} from 'react-icons/md'
-import {GrFormClose} from 'react-icons/gr'
+import {portfolioData} from '../../data/MyData'
 
 
 const Portfolio = () => {
-
+  const data = portfolioData
   const [showDetail, setShowDetail] = useState(false)
   const [showDetailOut, setShowDetailOut] = useState(false)
   const [dataDetail, setDataDetail] = useState({})
@@ -23,6 +15,10 @@ const Portfolio = () => {
   const [showMainListIn, setShowMainListIn] = useState(false) 
   const [showMainListOut, setShowMainListOut] = useState(false) 
   const showDetailHandle = (data) => {
+    const element = document.getElementById('portfolio');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
     setDataDetail(data)
     if(showDetail === false){ //open
       setShowMainListOut(true)
@@ -49,62 +45,10 @@ const Portfolio = () => {
       }, 500);
     }, 500);
   }
-  const data = [
-    {
-      id: 1,
-      image: IMG1,
-      title: 'Company Profile',
-      // github: 'https://github.com',
-      // demo: 'https:dribbble.com'
-    },{
-      id: 2,
-      image: IMG2,
-      title: 'Quiz Test Application',
-      // github: 'https://github.com',
-      // demo: 'https:dribbble.com'
-    },{
-      id: 3,
-      image: IMG3,
-      title: 'Logistic Handling System',
-      // github: 'https://github.com',
-      // demo: 'https:dribbble.com'
-    },{
-      id: 4,
-      image: IMG4,
-      title: 'Manifes Data Reporting System',
-      // github: 'https://github.com',
-      // demo: 'https:dribbble.com'
-    },{
-      id: 5,
-      image: IMG5,
-      title: 'Academic System Information',
-      // github: 'https://github.com',
-      // demo: 'https:dribbble.com'
-    },{
-      id: 6,
-      image: IMG6,
-      title: 'Delivery Handling System',
-      // github: 'https://github.com',
-      // demo: 'https:dribbble.com'
-    },{
-      id: 7,
-      image: IMG7,
-      title: 'Wedding Invitation',
-      // github: 'https://github.com',
-      // demo: 'https:dribbble.com'
-    },{
-      id: 8,
-      image: IMG8,
-      title: 'Aviation Monitoring Equipment & Report',
-      // github: 'https://github.com',
-      // demo: 'https:dribbble.com'
-    }
-    
-  ]
 
   return (
     <section id='portfolio'>
-      <h5>My Recet Work</h5>
+      <h5>My Recent Work</h5>
       <h2>Portfolio</h2>
       <div className={`${showDetail ? '' : 'hidden'} ${showDetail ? 'animate__animated animate__fadeInTopLeft' : ''} ${showDetailOut ? 'animate__animated animate__fadeOutTopLeft' : ''}`}>
         <div className={`container portfolio__detail__container `} >

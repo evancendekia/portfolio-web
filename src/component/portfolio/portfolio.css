@@ -88,6 +88,7 @@
 }
 .title{
     float:left;
+    max-width: 90%;
 }
 .title-img{
     display:none;
@@ -112,7 +113,7 @@
 }
 
 .detail__title h2{
-    font-size: 1.5  rem;
+    font-size: 1.5 rem;
 }
 
 /* ============== MEDIA MEDIUM DEVICES ============== */
@@ -127,7 +128,7 @@
         margin-bottom: 1.2rem !important;
     }
     .portfolio__detail__container p{
-        font-size: 14px;
+        font-size: 0.85rem;
     }
     .portfolio__small__container {
         display: grid;
@@ -156,7 +157,7 @@
         margin-bottom: 1rem !important;
     }
     .portfolio__detail__container p{
-        font-size: 12px;
+        font-size: 0.7.5rem;
     }
     .close__button-img{
         display: flex;
@@ -171,5 +172,11 @@
     .close__button-img, .close__button-detail {
         padding: 0.5rem;
         font-size: 1rem;
+    }
+    .detail__title h2{
+        font-size: 1.25rem;
+    }
+    .title{
+        max-width: 80%;
     }
 }
