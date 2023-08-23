@@ -68,10 +68,18 @@ const Portfolio = () => {
               <a onClick={()=> closeShowDetail()}className="close__button-detail"><MdClose/></a>
             </div>
             <hr/>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempus, massa eu ullamcorper pretium, dolor ante dignissim libero, eget lobortis erat sem vel odio. Nullam nibh mi, mollis in bibendum in, malesuada vulputate lacus. Aenean ut lobortis elit. Nam non augue neque. Nunc nec sodales ante, sit amet vehicula nulla. Maecenas vulputate, enim non rhoncus fringilla, neque mauris bibendum ex, vel vulputate sapien diam ut lacus. Donec neque est, condimentum laoreet ornare quis, molestie rhoncus tortor. </p>
-            <br/>
-            <p>Vestibulum ornare risus a ante tristique, quis suscipit nunc tincidunt. Duis auctor molestie euismod. Cras lacinia magna quis lobortis tempus. Duis sit amet imperdiet massa. Aenean porttitor odio mi, eu vestibulum mauris semper eget. Nulla rhoncus lacus id sapien sollicitudin, quis semper dolor interdum. Ut iaculis enim in nisl pellentesque accumsan. Duis ut interdum leo. Mauris ac euismod metus. </p>
-
+            {dataDetail.description !== undefined 
+            ? (dataDetail.description.map(item=>{
+              return <><p>{item}</p><br/></>
+              }))
+            : (
+              <> 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempus, massa eu ullamcorper pretium, dolor ante dignissim libero, eget lobortis erat sem vel odio. Nullam nibh mi, mollis in bibendum in, malesuada vulputate lacus. Aenean ut lobortis elit. Nam non augue neque. Nunc nec sodales ante, sit amet vehicula nulla. Maecenas vulputate, enim non rhoncus fringilla, neque mauris bibendum ex, vel vulputate sapien diam ut lacus. Donec neque est, condimentum laoreet ornare quis, molestie rhoncus tortor. </p>
+                <br/>
+                <p>Vestibulum ornare risus a ante tristique, quis suscipit nunc tincidunt. Duis auctor molestie euismod. Cras lacinia magna quis lobortis tempus. Duis sit amet imperdiet massa. Aenean porttitor odio mi, eu vestibulum mauris semper eget. Nulla rhoncus lacus id sapien sollicitudin, quis semper dolor interdum. Ut iaculis enim in nisl pellentesque accumsan. Duis ut interdum leo. Mauris ac euismod metus. </p>
+              </>
+            )}
+            
           </article>
 
         </div>
