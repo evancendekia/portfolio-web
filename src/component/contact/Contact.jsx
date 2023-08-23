@@ -3,16 +3,35 @@ import './contact.css'
 import {MdOutlineMail} from 'react-icons/md'
 import {BsWhatsapp} from 'react-icons/bs'
 import emailjs from 'emailjs-com'
+import Swal from "sweetalert2";
 
 const Contact = () => {
   const form = useRef()
   const sendEmail = (e) => {
     e.preventDefault();
+    Swal.fire({
+      title: 'Loading',
+      allowEscapeKey: false,
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      }
+    })
     emailjs.sendForm('service_0u9cwfq', 'template_ggo7pp8', form.current, 'RcRN0iVqeBhY85iY-')
     .then((result) => {
+        Swal.fire({
+          icon: "success",
+          text: "Your message was sent!",
+          showConfirmButton: true
+        })
         // console.log(result.text);
     }, (error) => {
-        console.log(error.text);
+      Swal.fire({
+        icon: "error",
+        text: "There was an error when sending message!",
+        showConfirmButton: true
+      })
+        // console.log(error.text);
     });
     e.target.reset()
     
